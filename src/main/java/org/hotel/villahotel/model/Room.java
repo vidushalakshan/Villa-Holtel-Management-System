@@ -3,7 +3,6 @@ package org.hotel.villahotel.model;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.RandomStringUtils;
 
 import java.math.BigDecimal;
@@ -25,7 +24,7 @@ public class Room {
     @Lob
     private Blob image;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "room", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<BookedRoom> bookings;
 
     public Room() {
