@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.SQLException;
+import java.util.List;
 
 @RestController
 @CrossOrigin
@@ -28,6 +29,11 @@ public class RoomController {
         Room savedRoom = roomService.addNewRoom(photo , roomType , roomPrice);
         RoomResponse response = new RoomResponse(savedRoom.getId(),savedRoom.getRoomType(),savedRoom.getRoomPrice());
         return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("roomtype")
+    public List<String> getRoomTypes () {
+        return roomService.getAllRoomTypes();
     }
 
 }

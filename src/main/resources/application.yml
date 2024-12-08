@@ -20,3 +20,7 @@ spring:
       max-request-size: 5MB
       file-size-threshold: 2KB
 
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
