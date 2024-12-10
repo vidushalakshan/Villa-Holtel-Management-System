@@ -20,7 +20,7 @@ public class BookingRoomResponse {
     private String bookingConfirmationCode;
     private Room room;
 
-    public BookingRoomResponse(Long bookingId, LocalDate checkInDate, LocalDate checkOutDate, String bookingConfirmationCode) {
+    public BookingRoomResponse(Long bookingId, LocalDate checkInDate, LocalDate checkOutDate) {
         this.bookingId = bookingId;
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
