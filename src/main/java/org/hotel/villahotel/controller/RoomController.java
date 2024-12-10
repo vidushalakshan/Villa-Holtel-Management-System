@@ -65,6 +65,7 @@ public class RoomController {
         return ResponseEntity.ok(roomResponses);
     }
 
+    @GetMapping("allrooms")
     private RoomResponse getRoomResponse(Room room) {
         List<BookedRoom> booking = getAllBookingsByRoomId(room.getId());
         List<BookingRoomResponse> bookingInfo = booking
